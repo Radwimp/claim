@@ -1,0 +1,127 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended",
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+      },
+    ],
+    "import/prefer-default-export": "off",
+    "no-use-before-define": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "no-shadow": "off",
+    "react/require-default-props": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-use-before-define": "error",
+    "@typescript-eslint/no-shadow": "error",
+    "newline-after-var": "error",
+    "newline-before-return": "error",
+    "arrow-body-style": "error",
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "export",
+      },
+      {
+        "blankLine": "any",
+        "prev": "export",
+        "next": "export",
+      },
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+      },
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [["builtin", "external"], ["internal", "type"], "unknown"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before",
+          },
+          {
+            "pattern": "next/*",
+            "group": "external",
+            "position": "before",
+          },
+          {
+            "pattern": "**/+(containers|components|pages|layouts){*,/**}",
+            "group": "internal",
+            "position": "before",
+          },
+          {
+            "pattern": "**/hooks",
+            "group": "internal",
+            "position": "before",
+          },
+          {
+            "pattern": "**/graphql/+(mutations|queries|fragments){*,/**}",
+            "group": "internal",
+            "position": "before",
+          },
+          {
+            "pattern": "**/utils",
+            "group": "internal",
+            "position": "before",
+          },
+          {
+            "pattern": "**/store{*,/**}",
+            "group": "internal",
+            "position": "before",
+          },
+          {
+            "pattern": "**/+(routePaths|constants|config){*,/**}",
+            "group": "internal",
+            "position": "before",
+          },
+          {
+            "pattern": "**/schema",
+            "group": "internal",
+            "position": "before",
+          },
+          {
+            "pattern": "**/types{*,/**}",
+            "group": "internal",
+            "position": "after",
+          },
+          {
+            "pattern": "**/assets{*,/**}",
+            "group": "internal",
+            "position": "after",
+          },
+        ],
+        "pathGroupsExcludedImportTypes": [],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true,
+        },
+      },
+    ],
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {},
+    },
+  },
+}
